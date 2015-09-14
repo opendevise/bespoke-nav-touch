@@ -66,6 +66,28 @@ bespoke.from('.deck', [
 ]);
 ```
 
+=== Options
+
+The following options are available when registering the bespoke-nav-touch plugin:
+
+threshold _(type: number, default: Math.ceil(20 / window.devicePixelRatio))_::
+The distance (in pixels) the touch gesture must travel (touchmove) in order to trigger slide navigation.
+
+axis _(type: string, default: 'x')_::
+The axis along which the touch gesture is registered.
+A value of 'x' enables left-to-right navigation.
+A value of 'y' enables top-to-bottom navigation.
+
+=== Options example
+
+Here's an example showing the options in use:
+
+```
+bespoke.from('.deck', [
+  navtouch({ threshold: 50, axis: 'y' })
+]);
+```
+
 == Credits
 
 This plugin is a fork of the official https://github.com/markdalgleish/bespoke-touch[bespoke-touch] plugin by Mark Dalgleish.
