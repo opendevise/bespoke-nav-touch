@@ -1,0 +1,76 @@
+= bespoke-nav-touch
+Dan Allen <https://github.com/mojavelinux>
+// Settings:
+:idprefix:
+:idseparator: -
+ifdef::env-github[:badges:]
+// Variables:
+:release-version: master
+// URIs:
+:uri-raw-file-base: https://raw.githubusercontent.com/opendevise/bespoke-nav-touch/{release-version}
+
+ifdef::badges[]
+//image:https://img.shields.io/npm/v/bespoke-nav-touch.svg[npm package, link=https://www.npmjs.com/package/bespoke-nav-touch]
+image:https://img.shields.io/travis/opendevise/bespoke-nav-touch/master.svg[Build Status (Travis CI), link=https://travis-ci.org/opendevise/bespoke-nav-touch]
+endif::[]
+
+Adds touch navigation to a http://markdalgleish.com/projects/bespoke.js[Bespoke.js] presentation.
+
+== Example
+
+http://opendevise.github.io/bespoke-nav-touch[View the demo] online.
+
+This repository includes a demo folder the shows this plugin in action.
+To view it locally, you first need to clone this repository:
+
+ $ git clone https://github.com/opendevise/bespoke-nav-touch && cd bespoke-nav-touch
+
+Next, install the dependencies inside the project folder using npm:
+
+ $ npm install
+
+Finally, visit the file [path]_demo/index.html_ in your browser to see the plugin in action.
+
+== Download
+
+Download the {uri-raw-file-base}/dist/bespoke-nav-touch.min.js[production mode version] or the {uri-raw-file-base}/dist/bespoke-nav-touch.js[development mode version], or use a package manager.
+
+=== npm
+
+ $ npm install bespoke-nav-touch
+
+=== Bower
+
+ $ bower install bespoke-nav-touch
+
+== Usage
+
+This plugin is shipped in a https://github.com/umdjs/umd[UMD format], meaning it is available as a CommonJS/AMD module or as a browser global.
+
+For example, when using CommonJS modules:
+
+```js
+var bespoke = require('bespoke'),
+  navtouch = require('bespoke-nav-touch');
+
+bespoke.from('.deck', [
+  navtouch()
+]);
+```
+
+When using a browser global:
+
+```js
+bespoke.from('.deck', [
+  bespoke.plugins.navtouch()
+]);
+```
+
+== Credits
+
+This plugin is a fork of the official https://github.com/markdalgleish/bespoke-touch[bespoke-touch] plugin by Mark Dalgleish.
+This fork does not interfere with scrolling, has working tests, provides a cleanup routine and is more clearly named.
+
+== License
+
+http://en.wikipedia.org/wiki/MIT_License[MIT License]
