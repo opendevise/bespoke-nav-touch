@@ -4,7 +4,7 @@ var bespoke = require('bespoke'),
   navtouch = require('../../lib/bespoke-nav-touch.js');
 
 describe('bespoke-nav-touch', function() {
-  var DEFAULT_THRESHOLD = Math.round(20 / window.devicePixelRatio),
+  var DEFAULT_THRESHOLD = Math.round(50 / window.devicePixelRatio),
     deck,
     createDeck = function(opts) {
       var parent = document.createElement('article');
