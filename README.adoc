@@ -1,6 +1,5 @@
 = bespoke-nav-touch
 Dan Allen <https://github.com/mojavelinux>
-v1.0.0
 // Settings:
 :idprefix:
 :idseparator: -
