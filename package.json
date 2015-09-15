@@ -1,6 +1,6 @@
 {
   "name": "bespoke-nav-touch",
-  "version": "1.0.0-dev",
+  "version": "1.0.0",
   "description": "Adds touch navigation to a Bespoke.js presentation.",
   "homepage": "https://github.com/opendevise/bespoke-nav-touch",
   "bugs": "https://github.com/opendevise/bespoke-nav-touch/issues",
