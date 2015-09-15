@@ -66,6 +66,13 @@ bespoke.from('.deck', [
 ]);
 ```
 
+=== Behavior
+
+When you make a swipe gesture on a touchscreen device, the slides will advance opposite the direction of the swipe.
+By default, if you swipe from right-to-left, the presentation will advance to the next slide.
+If you swipe from left-to-right, the presentation will return to the previous slide.
+You can modify or fine-tune this behavior using the available options.
+
 === Options
 
 The following options are available when registering the bespoke-nav-touch plugin:
