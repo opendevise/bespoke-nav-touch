@@ -3,7 +3,7 @@
 /.jshintrc
 /.npmignore
 /.travis.yml
-/WORKLOG.adoc
 /package-README.md
+/WORKLOG.adoc
 /demo/
 /test/coverage/
