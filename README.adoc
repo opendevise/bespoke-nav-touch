@@ -66,21 +66,6 @@ bespoke.from('.deck', [
 ]);
 ```
 
-=== Behavior
-
-When you make a swipe gesture on a touchscreen device, the slides will advance opposite the direction of the swipe.
-By default, if you swipe from right-to-left, the presentation will advance to the next slide.
-If you swipe from left-to-right, the presentation will return to the previous slide.
-You can modify or fine-tune this behavior using the available options.
-
-This plugin works by registering listeners for both the `touchstart` and `touchmove` events.
-If a single-point (i.e., single-finger) touch is detected, the plugin begins tracking subsequent movement of that touch.
-If the distance of the touch exceeds the threshold along the specified axis, action is taken to advance the slide.
-Further movements associated with that same touch event are then canceled (using `preventDefault()`).
-Otherwise, the plugin does not alter the touch event.
-
-This plugin should cause minimal interference with native and other custom touch gestures.
-
 === Options
 
 The following options are available when registering the bespoke-nav-touch plugin:
@@ -102,6 +87,21 @@ bespoke.from('.deck', [
   navtouch({ threshold: 20 / window.devicePixelRatio, axis: 'y' })
 ]);
 ```
+
+== Behavior
+
+When you make a swipe gesture on a touchscreen device, the slides will advance opposite the direction of the swipe.
+By default, if you swipe from right-to-left, the presentation will advance to the next slide.
+If you swipe from left-to-right, the presentation will return to the previous slide.
+You can modify or fine-tune this behavior using the available options.
+
+This plugin works by registering listeners for both the `touchstart` and `touchmove` events.
+If a single-point (i.e., single-finger) touch is detected, the plugin begins tracking subsequent movement of that touch.
+If the distance of the touch exceeds the threshold along the specified axis, action is taken to advance the slide.
+Further movements associated with that same touch event are then canceled (using `preventDefault()`).
+Otherwise, the plugin does not alter the touch event.
+
+This plugin should cause minimal interference with native and other custom touch gestures.
 
 == Credits
 
