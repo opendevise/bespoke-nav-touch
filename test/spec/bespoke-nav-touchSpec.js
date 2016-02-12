@@ -30,10 +30,16 @@ describe('bespoke-nav-touch', function() {
       e.touches = multiple ? [{ pageX: x, pageY: y }, { pageX: x + 1, pageY: y + 1}] : [{ pageX: x, pageY: y }];
       deck.parent.dispatchEvent(e);
     },
-    swipe = function(axis, amount, multiple) {
-      touchEvent('start', axis == 'x' ? amount : 0, axis == 'x' ? 0 : amount, multiple);
+    swipe = function(axis, amount, extra, multiple) {
+      extra = extra === undefined ? 0 : -extra;
+      if (multiple === undefined) multiple = false;
+      var xAxis = axis === 'x', startX = xAxis ? amount : 0, startY = xAxis ? 0 : amount,
+        extraX = xAxis ? extra : 0, extraY = xAxis ? 0 : extra;
+      touchEvent('start', startX, startY, multiple);
+      touchEvent('move', Math.ceil(startX * 0.5), Math.ceil(startY * 0.5), multiple);
       touchEvent('move', 0, 0, multiple);
-      touchEvent('end', 0, 0, multiple);
+      if (extraX > 0 || extraY > 0) touchEvent('move', extraX, extraY, multiple);
+      touchEvent('end', extraX, extraY, multiple);
     };
 
   afterEach(destroyDeck);
@@ -49,7 +55,7 @@ describe('bespoke-nav-touch', function() {
         beforeEach(function() { deck.slide(1); });
 
         it('should go to next slide when swiping ' + direction, function() {
-          swipe(axis, threshold + 1);
+          swipe(axis, threshold + 1, 1);
           expect(deck.slide()).toBe(2);
         });
 
@@ -59,7 +65,7 @@ describe('bespoke-nav-touch', function() {
         });
 
         it('should not go to next slide when swiping ' + direction + ' using multiple touches', function() {
-          swipe(axis, threshold + 1, true);
+          swipe(axis, threshold + 1, 1, true);
           expect(deck.slide()).toBe(1);
         });
       });
@@ -69,17 +75,17 @@ describe('bespoke-nav-touch', function() {
         beforeEach(function() { deck.slide(1); });
 
         it('should go to previous slide when swiping ' + direction, function() {
-          swipe(axis, 0 - (threshold + 1));
+          swipe(axis, 0 - (threshold + 1), -1);
           expect(deck.slide()).toBe(0);
         });
 
         it('should not go to next slide when swiping ' + direction + ' less than threshold', function() {
-          swipe(axis, 0 - (threshold - 1));
+          swipe(axis, 0 - (threshold - 1), 0);
           expect(deck.slide()).toBe(1);
         });
 
         it('should not go to next slide when swiping ' + direction + ' using multiple touches', function() {
-          swipe(axis, 0 - (threshold + 1), true);
+          swipe(axis, 0 - (threshold + 1), 1, true);
           expect(deck.slide()).toBe(1);
         });
       });
