@@ -20,7 +20,7 @@ module.exports = function(opts) {
         if (start === undefined) return e.preventDefault(); // action already taken
         var delta = e.touches[0][axis] - start;
         if (Math.abs(delta) > gap) {
-          deck[delta > 0 ? 'prev' : 'next']();
+          (delta > 0 ? deck.prev : deck.next)();
           start = e.preventDefault(); // mark action taken
         }
       };
