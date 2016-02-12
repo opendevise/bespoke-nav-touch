@@ -1,7 +1,7 @@
 /*!
  * bespoke-nav-touch v1.0.1-dev
  *
- * Copyright 2015, Dan Allen
+ * Copyright 2016, Dan Allen
  * This content is released under the MIT license
  */
 
@@ -16,11 +16,12 @@ module.exports = function(opts) {
         if (e.touches.length === 1) start = e.touches[0][axis];
       },
       onTouchmove = function(e) {
-        if (start === null) return;
+        if (start === null) return; // not ours
+        if (start === undefined) return e.preventDefault(); // action already taken
         var delta = e.touches[0][axis] - start;
         if (Math.abs(delta) > gap) {
           deck[delta > 0 ? 'prev' : 'next']();
-          start = null;
+          start = e.preventDefault(); // mark action taken
         }
       };
     deck.on('destroy', function() {
