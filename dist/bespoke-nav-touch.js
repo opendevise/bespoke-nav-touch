@@ -1,5 +1,5 @@
 /*!
- * bespoke-nav-touch v1.0.1
+ * bespoke-nav-touch v1.0.2-dev
  *
  * Copyright 2016, Dan Allen
  * This content is released under the MIT license
