@@ -82,7 +82,7 @@ A value of 'y' enables top-to-bottom navigation.
 
 Here's an example showing the options in use:
 
-```
+```js
 bespoke.from('.deck', [
   navtouch({ threshold: 20 / window.devicePixelRatio, axis: 'y' })
 ]);
