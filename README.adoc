@@ -20,7 +20,7 @@ Adds touch navigation to a http://markdalgleish.com/projects/bespoke.js[Bespoke.
 
 http://opendevise.github.io/bespoke-nav-touch[View the demo] online.
 
-This repository includes a demo folder the shows this plugin in action.
+This repository includes a demo folder that shows this plugin in action.
 To view it locally, you first need to clone this repository:
 
  $ git clone https://github.com/opendevise/bespoke-nav-touch && cd bespoke-nav-touch
@@ -78,7 +78,7 @@ The axis along which the touch gesture is registered.
 A value of 'x' enables left-to-right navigation.
 A value of 'y' enables top-to-bottom navigation.
 
-=== Options example
+==== Options example
 
 Here's an example showing the options in use:
 
